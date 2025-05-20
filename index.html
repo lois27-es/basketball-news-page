@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Basketball Sports News</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -68,7 +69,7 @@
 </head>
 <body>
   <header>
-    <h1>🏀 Basketball News</h1>
+    <h1>🏀 SlamDunk News</h1>
     <nav>
       <ul>
         <li><a href="#" class="active" data-section="home">Home</a></li>
@@ -81,47 +82,7 @@
 
   <main>
     <section id="content">
-      <section class="main-news">
-        <article>
-          <img src="https://via.placeholder.com/800x300?text=Lakers+vs+Warriors" alt="Lakers vs Warriors">
-          <h2>Lakers Clinch Overtime Thriller Against Warriors</h2>
-          <p>The Los Angeles Lakers pulled off a heart-pounding 121-119 victory over the Golden State Warriors last night in double overtime.</p>
-          <p style="display: none;">LeBron James posted a near triple-double while Anthony Davis dominated the boards. Coach Darvin Ham called it “a statement game.”</p>
-          <a href="#">Read more</a>
-        </article>
-      </section>
-
-      <section class="news-section">
-        <article>
-          <h3>Steph Curry Drops 50 in Historic Night</h3>
-          <p>Golden State's star guard exploded for 50 points against the Trail Blazers.</p>
-          <p style="display: none;">This marks the 11th time in Curry’s career he has scored 50 or more points in a single game.</p>
-          <a href="#">Full story</a>
-        </article>
-
-        <article>
-          <h3>Top 5 Rookie Performances This Week</h3>
-          <p>From explosive dunks to clutch threes, this week’s rookies proved their talent.</p>
-          <p style="display: none;">Other standouts include Raptors’ forward Jalen Simmons with a double-double and Pistons’ wing Malik Carter who contributed key plays on both ends.</p>
-          <a href="#">See the list</a>
-        </article>
-
-        <article>
-          <h3>Trade Rumors: Damian Lillard to Miami?</h3>
-          <p>Sources say the Heat are in talks with the Blazers to acquire star guard Damian Lillard.</p>
-          <p style="display: none;">If the trade happens, it could reshape the Eastern Conference landscape. Lillard’s leadership and scoring ability could provide the Heat with the boost they need to make a deep playoff run this season.</p>
-          <a href="#">Learn more</a>
-        </article>
-      </section>
-
-      <aside>
-        <h3>Latest Scores</h3>
-        <ul>
-          <li>Heat 102 - Celtics 98</li>
-          <li>Nuggets 110 - Suns 105</li>
-          <li>Bucks 94 - Bulls 91</li>
-        </ul>
-      </aside>
+      <!-- Content gets inserted here -->
     </section>
   </main>
 
@@ -130,37 +91,144 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const content = document.getElementById('content');
+    const content = document.getElementById('content');
 
-      // Handle nav menu active state
-      const navLinks = document.querySelectorAll('nav ul li a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          const section = e.target.getAttribute('data-section');
-          // Load content based on section
-          // For simplicity, this example only handles 'home'
-          if (section === 'home') {
-            // Reload or reset the home content if needed
-          }
+    const sections = {
+      home: `
+        <section class="main-news">
+          <article>
+            <img src="https://via.placeholder.com/800x300?text=Lakers+vs+Warriors" alt="Lakers vs Warriors">
+            <h2>Lakers Clinch Overtime Thriller Against Warriors</h2>
+            <p>The Los Angeles Lakers pulled off a heart-pounding 121-119 victory over the Golden State Warriors last night in double overtime.</p>
+            <a href="#" data-section="readmore">Read more</a>
+          </article>
+        </section>
+
+        <section class="news-section">
+          <article>
+            <h3>Steph Curry Drops 50 in Historic Night</h3>
+            <p>Golden State's star guard exploded for 50 points against the Trail Blazers.</p>
+            <a href="#" data-section="fullstory">Full story</a>
+          </article>
+
+          <article>
+            <h3>Top 5 Rookie Performances This Week</h3>
+            <p>From explosive dunks to clutch threes, this week’s rookies proved their talent.</p>
+            <a href="#" data-section="seelist">See the list</a>
+          </article>
+
+          <article>
+            <h3>Trade Rumors: Damian Lillard to Miami?</h3>
+            <p>Sources say the Heat are in talks with the Blazers to acquire star guard Damian Lillard.</p>
+            <a href="#" data-section="learnmore">Learn more</a>
+          </article>
+        </section>
+
+        <aside>
+          <h3>Latest Scores</h3>
+          <ul>
+            <li>Heat 102 - Celtics 98</li>
+            <li>Nuggets 110 - Suns 105</li>
+            <li>Bucks 94 - Bulls 91</li>
+          </ul>
+        </aside>
+      `,
+      scores: `
+        <h2>Scores</h2>
+        <ul>
+          <li>Lakers 121 - Warriors 119 (Double OT)</li>
+          <li>Heat 102 - Celtics 98</li>
+          <li>Nuggets 110 - Suns 105</li>
+          <li>Bucks 94 - Bulls 91</li>
+        </ul>
+      `,
+      players: `
+        <h2>Players</h2>
+        <article>
+          <h3>LeBron James</h3>
+          <p>LeBron posted a near triple-double and continues to dominate with his all-around skills.</p>
+        </article>
+        <article>
+          <h3>Steph Curry</h3>
+          <p>The star guard dropped 50 points, showing incredible shooting and focus.</p>
+        </article>
+        <article>
+          <h3>Anthony Davis</h3>
+          <p>Davis was a key factor in the Lakers’ win, dominating on defense and the boards.</p>
+        </article>
+      `,
+      highlights: `
+        <h2>Highlights</h2>
+        <p>Watch the most exciting plays from recent games:</p>
+        <ul>
+          <li>LeBron's clutch 3-pointer</li>
+          <li>Steph Curry's 50-point night</li>
+          <li>Thunder rookie Lewis' explosive dunks</li>
+        </ul>
+      `,
+      readmore: `
+        <article>
+          <h2>Full Article: Lakers vs Warriors</h2>
+          <p>In a double overtime battle, the Lakers edged out the Warriors 121-119. LeBron led the charge with 28 points, 9 assists, and 11 rebounds.</p>
+          <a href="#" data-section="home">Back to Home</a>
+        </article>
+      `,
+      fullstory: `
+        <article>
+          <h2>Full Story: Curry’s 50-point Game</h2>
+          <p>Steph Curry dazzled the crowd with 50 points including 9 three-pointers. This was his 12th career 50-point game, solidifying his elite status.</p>
+          <a href="#" data-section="home">Back to Home</a>
+        </article>
+      `,
+      seelist: `
+        <article>
+          <h2>Top 5 Rookie Performances</h2>
+          <ul>
+            <li>Marcus Lewis - 27 pts, 5 ast, 3 stl</li>
+            <li>Jalen Green - 22 pts, 6 reb</li>
+            <li>Scottie Barnes - 20 pts, 8 reb, 2 blk</li>
+            <li>Keegan Murray - 19 pts, 4 3PT</li>
+            <li>Bennedict Mathurin - 18 pts, 3 ast</li>
+          </ul>
+          <a href="#" data-section="home">Back to Home</a>
+        </article>
+      `,
+      learnmore: `
+        <article>
+          <h2>Trade Rumors: Lillard to Miami?</h2>
+          <p>Miami is negotiating with Portland for a blockbuster deal involving Damian Lillard. Sources say the trade could include Tyler Herro and multiple first-round picks.</p>
+          <a href="#" data-section="home">Back to Home</a>
+        </article>
+      `
+    };
+
+    // Load initial content
+    content.innerHTML = sections.home;
+
+    // Handle nav menu active state
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const section = e.target.getAttribute('data-section');
+        if (sections[section]) {
+          content.innerHTML = sections[section];
           navLinks.forEach(l => l.classList.remove('active'));
           e.target.classList.add('active');
-        });
-      });
-
-      // Handle all internal links (like Read more)
-      document.body.addEventListener('click', function (e) {
-        if (e.target.tagName === 'A' && e.target.closest('article')) {
-          e.preventDefault();
-          // Show all second paragraphs
-          const hiddenParagraphs = document.querySelectorAll('article p:nth-of-type(2)');
-          hiddenParagraphs.forEach(p => p.style.display = 'block');
-          // Remove all 'Read more' links
-          const readMoreLinks = document.querySelectorAll('article a');
-          readMoreLinks.forEach(link => link.remove());
         }
       });
+    });
+
+    // Handle all internal links (like Read more)
+    document.body.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && e.target.dataset.section) {
+        e.preventDefault();
+        const section = e.target.dataset.section;
+        if (sections[section]) {
+          content.innerHTML = sections[section];
+          navLinks.forEach(l => l.classList.remove('active'));
+        }
+      }
     });
   </script>
 </body>
