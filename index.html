@@ -2,237 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Basketball Sports News</title>
+  <title>SlamDunk News</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-    }
-    header {
-      background: #222;
-      color: white;
-      padding: 10px 20px;
-    }
-    header h1 {
-      margin: 0 0 10px 0;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li {
-      padding: 5px 10px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    nav ul li a.active {
-      background-color: #555;
-      border-radius: 5px;
-    }
-    main {
-      padding: 20px;
-    }
-    .main-news img {
-      max-width: 100%;
-      height: auto;
-    }
-    article a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    article a:hover {
-      text-decoration: underline;
-    }
-    aside {
-      background: #f5f5f5;
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 5px;
-    }
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
-    }
-  </style>
+
 </head>
-<body>
-  <header>
-    <h1>🏀 SlamDunk News</h1>
+<body style="background-color: #f9f9f9; color: #222; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+
+  <header style="background-color: #ffffff; border-bottom: 2px solid #e0e0e0; padding: 20px;">
+    <h1 style="margin: 0; font-size: 2em; color: #1a1a1a;">🏀 <span style="color:#0077cc;">SlamDunk News</span></h1>
     <nav>
-      <ul>
-        <li><a href="#" class="active" data-section="home">Home</a></li>
-        <li><a href="#" data-section="scores">Scores</a></li>
-        <li><a href="#" data-section="players">Players</a></li>
-        <li><a href="#" data-section="highlights">Highlights</a></li>
+      <ul style="list-style: none; display: flex; gap: 20px; margin-top: 10px; padding: 0;">
+        <li><a href="#" class="active" data-section="home" style="text-decoration: none; color: #0077cc; font-weight: bold;">Home</a></li>
+        <li><a href="#" data-section="scores" style="text-decoration: none; color: #0077cc;">Scores</a></li>
+        <li><a href="#" data-section="players" style="text-decoration: none; color: #0077cc;">Players</a></li>
+        <li><a href="#" data-section="highlights" style="text-decoration: none; color: #0077cc;">Highlights</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main style="padding: 20px;">
     <section id="content">
       <!-- Content gets inserted here -->
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 SlamDunk News | All rights reserved.</p>
+  <footer style="background-color: #ffffff; border-top: 2px solid #e0e0e0; text-align: center; padding: 15px; color: #555;">
+    <p>© 2025 <span style="color: #0077cc;">SlamDunk News</span> | All rights reserved.</p>
   </footer>
 
   <script>
-    const content = document.getElementById('content');
+    document.addEventListener("DOMContentLoaded", function () {
+      const content = document.getElementById('content');
 
-    const sections = {
-      home: `
-        <section class="main-news">
-          <article>
-            <img src="https://via.placeholder.com/800x300?text=Lakers+vs+Warriors" alt="Lakers vs Warriors">
-            <h2>Lakers Clinch Overtime Thriller Against Warriors</h2>
+      const sections = {
+        home: `<section class="main-news" style="margin-bottom: 30px;">
+          <article style="margin-bottom: 20px;">
+            <img src="https://via.placeholder.com/800x300?text=Lakers+vs+Warriors" alt="Lakers vs Warriors" style="width:100%; border-radius: 8px;">
+            <h2 style="color: #0077cc;">Lakers Clinch Overtime Thriller Against Warriors</h2>
             <p>The Los Angeles Lakers pulled off a heart-pounding 121-119 victory over the Golden State Warriors last night in double overtime.</p>
-            <a href="#" data-section="readmore">Read more</a>
+            <a href="#" data-section="readmore" style="color: #0077cc;">Read more</a>
           </article>
         </section>
-
         <section class="news-section">
-          <article>
-            <h3>Steph Curry Drops 50 in Historic Night</h3>
+          <article style="margin-bottom: 20px;">
+            <h3 style="color: #0077cc;">Steph Curry Drops 50 in Historic Night</h3>
             <p>Golden State's star guard exploded for 50 points against the Trail Blazers.</p>
-            <a href="#" data-section="fullstory">Full story</a>
+            <a href="#" data-section="fullstory" style="color: #0077cc;">Full story</a>
           </article>
-
-          <article>
-            <h3>Top 5 Rookie Performances This Week</h3>
+          <article style="margin-bottom: 20px;">
+            <h3 style="color: orange;">Top 5 Rookie Performances This Week</h3>
             <p>From explosive dunks to clutch threes, this week’s rookies proved their talent.</p>
-            <a href="#" data-section="seelist">See the list</a>
+            <a href="#" data-section="seelist" style="color: orange;">See the list</a>
           </article>
-
           <article>
-            <h3>Trade Rumors: Damian Lillard to Miami?</h3>
+            <h3 style="color: red;">Trade Rumors: Damian Lillard to Miami?</h3>
             <p>Sources say the Heat are in talks with the Blazers to acquire star guard Damian Lillard.</p>
-            <a href="#" data-section="learnmore">Learn more</a>
+            <a href="#" data-section="learnmore" style="color: red;">Learn more</a>
           </article>
         </section>
-
-        <aside>
-          <h3>Latest Scores</h3>
-          <ul>
+        <aside style="background: #fff; border: 1px solid #ddd; padding: 15px; margin-top: 30px; border-radius: 8px;">
+          <h3 style="color: #0077cc;">Latest Scores</h3>
+          <ul style="padding-left: 20px;">
             <li>Heat 102 - Celtics 98</li>
             <li>Nuggets 110 - Suns 105</li>
             <li>Bucks 94 - Bulls 91</li>
           </ul>
-        </aside>
-      `,
-      scores: `
-        <h2>Scores</h2>
-        <ul>
-          <li>Lakers 121 - Warriors 119 (Double OT)</li>
-          <li>Heat 102 - Celtics 98</li>
-          <li>Nuggets 110 - Suns 105</li>
-          <li>Bucks 94 - Bulls 91</li>
-        </ul>
-      `,
-      players: `
-        <h2>Players</h2>
-        <article>
-          <h3>LeBron James</h3>
-          <p>LeBron posted a near triple-double and continues to dominate with his all-around skills.</p>
-        </article>
-        <article>
-          <h3>Steph Curry</h3>
-          <p>The star guard dropped 50 points, showing incredible shooting and focus.</p>
-        </article>
-        <article>
-          <h3>Anthony Davis</h3>
-          <p>Davis was a key factor in the Lakers’ win, dominating on defense and the boards.</p>
-        </article>
-      `,
-      highlights: `
-        <h2>Highlights</h2>
-        <p>Watch the most exciting plays from recent games:</p>
-        <ul>
-          <li>LeBron's clutch 3-pointer</li>
-          <li>Steph Curry's 50-point night</li>
-          <li>Thunder rookie Lewis' explosive dunks</li>
-        </ul>
-      `,
-      readmore: `
-        <article>
-          <h2>Full Article: Lakers vs Warriors</h2>
-          <p>In a double overtime battle, the Lakers edged out the Warriors 121-119. LeBron led the charge with 28 points, 9 assists, and 11 rebounds.</p>
-          <a href="#" data-section="home">Back to Home</a>
-        </article>
-      `,
-      fullstory: `
-        <article>
-          <h2>Full Story: Curry’s 50-point Game</h2>
-          <p>Steph Curry dazzled the crowd with 50 points including 9 three-pointers. This was his 12th career 50-point game, solidifying his elite status.</p>
-          <a href="#" data-section="home">Back to Home</a>
-        </article>
-      `,
-      seelist: `
-        <article>
-          <h2>Top 5 Rookie Performances</h2>
-          <ul>
+        </aside>`,
+
+        scores: `<h2 style="color:#0077cc;">Scores</h2>
+          <ul style="padding-left: 20px;">
+            <li>Lakers 121 - Warriors 119 (Double OT)</li>
+            <li>Heat 102 - Celtics 98</li>
+            <li>Nuggets 110 - Suns 105</li>
+            <li>Bucks 94 - Bulls 91</li>
+          </ul>`,
+
+        players: `<h2 style="color:#0077cc;">Players</h2>
+          <article><h3>LeBron James</h3><p>LeBron posted a near triple-double and continues to dominate.</p></article>
+          <article><h3>Steph Curry</h3><p>The star guard dropped 50 points, showing incredible shooting and focus.</p></article>
+          <article><h3>Anthony Davis</h3><p>Davis was a key factor in the Lakers’ win, dominating defensively.</p></article>`,
+
+        highlights: `<h2 style="color:#0077cc;">Highlights</h2>
+          <p>Watch the most exciting plays from recent games:</p>
+          <ul style="padding-left: 20px;">
+            <li>LeBron's clutch 3-pointer</li>
+            <li>Steph Curry's 50-point night</li>
+            <li>Thunder rookie Lewis' explosive dunks</li>
+          </ul>`,
+
+        readmore: `<article>
+          <h2 style="color:#0077cc;">Full Article: Lakers vs Warriors</h2>
+          <p>In a double overtime battle, the Lakers edged out the Warriors 121-119. LeBron led with 28 pts, 9 assists, and 11 rebounds.</p>
+          <a href="#" data-section="home" style="color:#0077cc;">Back to Home</a>
+        </article>`,
+
+        fullstory: `<article>
+          <h2 style="color:#0077cc;">Full Story: Curry’s 50-point Game</h2>
+          <p>Steph Curry dazzled with 50 points including 9 three-pointers. This was his 12th career 50-point game.</p>
+          <a href="#" data-section="home" style="color:#0077cc;">Back to Home</a>
+        </article>`,
+
+        seelist: `<article>
+          <h2 style="color:orange;">Top 5 Rookie Performances</h2>
+          <ul style="padding-left: 20px;">
             <li>Marcus Lewis - 27 pts, 5 ast, 3 stl</li>
             <li>Jalen Green - 22 pts, 6 reb</li>
-            <li>Scottie Barnes - 20 pts, 8 reb, 2 blk</li>
+            <li>Scottie Barnes - 20 pts, 8 reb</li>
             <li>Keegan Murray - 19 pts, 4 3PT</li>
             <li>Bennedict Mathurin - 18 pts, 3 ast</li>
           </ul>
-          <a href="#" data-section="home">Back to Home</a>
-        </article>
-      `,
-      learnmore: `
-        <article>
-          <h2>Trade Rumors: Lillard to Miami?</h2>
-          <p>Miami is negotiating with Portland for a blockbuster deal involving Damian Lillard. Sources say the trade could include Tyler Herro and multiple first-round picks.</p>
-          <a href="#" data-section="home">Back to Home</a>
-        </article>
-      `
-    };
+          <a href="#" data-section="home" style="color:orange;">Back to Home</a>
+        </article>`,
 
-    // Load initial content
-    content.innerHTML = sections.home;
+        learnmore: `<article>
+          <h2 style="color:red;">Trade Rumors: Lillard to Miami?</h2>
+          <p>Miami is negotiating with Portland for a blockbuster deal involving Damian Lillard. The trade could include Tyler Herro and picks.</p>
+          <a href="#" data-section="home" style="color:red;">Back to Home</a>
+        </article>`
+      };
 
-    // Handle nav menu active state
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const section = e.target.getAttribute('data-section');
-        if (sections[section]) {
-          content.innerHTML = sections[section];
-          navLinks.forEach(l => l.classList.remove('active'));
-          e.target.classList.add('active');
+      const navLinks = document.querySelectorAll('nav ul li a');
+
+      function loadSection(name) {
+        content.innerHTML = sections[name] || "<p>Section not found</p>";
+        navLinks.forEach(link => link.classList.remove("active"));
+        document.querySelectorAll(`[data-section="${name}"]`).forEach(link => {
+          link.classList.add("active");
+        });
+      }
+
+      // Initial load
+      loadSection("home");
+
+      // Handle nav links
+      navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const section = link.dataset.section;
+          loadSection(section);
+        });
+      });
+
+      // Handle internal content links
+      document.body.addEventListener("click", e => {
+        if (e.target.tagName === "A" && e.target.dataset.section) {
+          e.preventDefault();
+          loadSection(e.target.dataset.section);
         }
       });
-    });
-
-    // Handle all internal links (like Read more)
-    document.body.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A' && e.target.dataset.section) {
-        e.preventDefault();
-        const section = e.target.dataset.section;
-        if (sections[section]) {
-          content.innerHTML = sections[section];
-          navLinks.forEach(l => l.classList.remove('active'));
-        }
-      }
     });
   </script>
 </body>
 </html>
+
 
  
 
